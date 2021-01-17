@@ -1,5 +1,5 @@
   /*Program that checks whether the given string is valid or not.
-A string is valid if the open bracket is closed by the same type of beacket in the correct order
+A string is valid if the open bracket is closed by the same type of bracket in the correct order
 Three types of brackets in the string {} [] () */
 // This problem is a easy and standard one which can be solved using stack data structure 
 // It returns 1 if the string is valid else it returns 0.
