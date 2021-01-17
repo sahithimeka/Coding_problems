@@ -1,0 +1,39 @@
+  /*Program that checks whether the given string is valid or not.
+A string is valid if the open bracket is closed by the same type of beacket in the correct order
+Three types of brackets in the string {} [] () */
+// This problem is a easy and standard one which can be solved using stack data structure 
+// It returns 1 if the string is valid else it returns 0.
+#include<iostream>
+#include<stack> //for stack D.S
+using namespace std;
+bool Valid_Check(string s) //Function to check string is valid or not
+{
+    stack<char> p; //An empty stack is created
+    for(int i=0;i<s.length();i++) //Traversing the string
+    {
+        if(s[i]=='{'||s[i]=='['||s[i]=='(')
+        p.push(s[i]); //Pushing the char if the string contains Ip brackets
+        else
+        {
+        
+        if(p.empty())
+        return false;
+        if(s[i]=='}' && p.top()=='{') 
+        p.pop();//Pop the bracket if the opposite exists
+        else if(s[i]==']' && p.top()=='[')
+        p.pop();//Pop the bracket if the opposite exists
+        else if(s[i]==')' && p.top()=='(')
+        p.pop();//Pop the bracket if the opposite exists
+        else
+        return false;
+        }
+    }
+    return p.empty();//returns 1 if the stack is empty else returns 0 
+}
+int main()
+{
+     string s;
+     cin>>s;
+     cout<<Valid_Check(s);//Calling Valid_Check Function of boolean type
+return 0;
+}
